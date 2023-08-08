@@ -215,8 +215,11 @@
     overflow-x: hidden;
   } */
 
-  .scroll-doctor-info-mobile {
+  .scroll-doctor-info {
     display: none;
+  }
+  .scroll-doctor-info-mobile {
+    display: block;
   }
 
   .cards {
@@ -320,8 +323,8 @@
     margin-top: 2.5rem;
     display: flex;
     justify-content: space-between;
-    margin-left: 3.25rem;
-    margin-right: 9.375rem;
+    margin-left: 1.25rem;
+    margin-right: 5.375rem;
     cursor: pointer;
   }
 
