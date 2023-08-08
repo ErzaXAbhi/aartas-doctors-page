@@ -70,11 +70,8 @@
   /* Heading */
 
   .heading a {
-    margin: 0.5rem;
-  }
-
-  .heading h3 {
-    font-size: 1rem;
+    margin: 0.2rem;
+    cursor: pointer;
   }
 
   /* Hero section */
