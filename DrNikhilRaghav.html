@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      defer
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+      html {
+        scroll-padding-top: 60px;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      #main-container {
+        display: flex;
+      }
+
+      #text-section {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .doctor-name h2 {
+        font-size: 100px;
+        font-weight: bold;
+        padding: 10px;
+        line-height: 100px;
+      }
+
+      .doctor-speciality h4 {
+        font-size: 40px;
+        font-weight: bold;
+        color: #000;
+        padding: 10px;
+      }
+
+      .doctor-about-para {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        gap: 2rem;
+      }
+
+      .doctor-about-para p {
+        font-size: 18px;
+        padding: 10px;
+        font-weight: bold;
+      }
+
+      #image-section {
+        flex: 1;
+        position: sticky;
+        top: 0;
+        right: 0;
+        margin: 30px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        max-height: 100vh;
+
+        background-color: #ba7c5d;
+      }
+
+      .doctor-avtar:hover {
+        transform: scale(1.15);
+      }
+
+      .doctor-avtar img {
+        max-width: 1100px;
+        max-height: 700px;
+        object-fit: cover;
+        display: block;
+        transition: 0.3s ease-in-out;
+      }
+
+      hr {
+        height: 2px;
+        color: #000;
+        border: none;
+        margin: 0;
+      }
+
+      .doctor-quote {
+        margin-top: 20px;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      .doctor-quote h2 {
+        font-size: 40px;
+      }
+
+      .doctor-quote h5 {
+        font-size: 20px;
+      }
+
+      .doctor-quote button {
+        background-color: #fff;
+        border: none;
+        outline: none !important;
+        font-size: 40px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .doctor-quote h2 {
+        margin-top: 20px;
+      }
+
+      .doctor-blog-links h2 {
+        font-size: 20px;
+        margin-top: 50px;
+        padding: 10px;
+        margin-bottom: 50px;
+      }
+
+      .doctor-news-card-links {
+        display: flex;
+        padding: 10px;
+      }
+
+      .doctor-news-cards {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-top: 20px;
+        margin: 10px;
+        gap: 2rem;
+      }
+
+      .doctor-news-card-links h4 {
+        font-size: 35px;
+        padding-top: 20px;
+      }
+
+      .doctor-news-card-links h5 {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+
+    <nav class="navbar sticky-top" id="navbar">
+      <div class="nav-container">
+       <a href="https://aartas.com/"><img src="./img/logo.png" alt="" class="logo-img" /></a> 
+        <ul id="menu" class="menu">
+          <li class="menu-item"><a href="#">Locations</a></li>
+          <li class="menu-item"><a href="#">Doctors</a></li>
+        </ul>
+        <div class="hamberger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- download the app section -->
+
+    <header class="header" id="header">
+      <div class="heading">
+        <h3>Download the Aartas- Healthcare App 
+          <a href="https://apps.apple.com/in/app/aartas/id1616752024"><i class="fa-brands fa-apple" target_blank></i></a> 
+          <a href="https://play.google.com/store/apps/details?id=com.aartas.app&pli=1"><i class="fa-brands fa-google-play"></i></a> 
+            <a href="https://aartas.com/v1/public/qr"><i class="fa-solid fa-arrow-right-long"></i></a>  </h3>
+      </div>
+    </header>
+
+    <!-- main sectio about doctor information -->
+    <main class="about-doctor">
+      <div id="main-container">
+        <div id="text-section">
+          <div class="doctor-name"><h2>Dr.Nikhil Raghav</h2></div>
+          <div class="doctor-speciality">
+            <h4>Child Health, MBBS, Paediatrics</h4>
+          </div>
+          <div class="doctor-about-para">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              ultrices felis et justo blandit, a faucibus tellus aliquam. Nunc
+              tristique nisi eget justo dapibus consectetur. Nullam efficitur
+              nec augue nec viverra. Nullam nec dolor quis elit malesuada
+              blandit eget nec mauris. Etiam sit amet ex et odio tincidunt
+              faucibus. Donec efficitur, ligula at elementum mollis, quam est
+              auctor quam, at interdum justo nisi sit amet justo. Sed feugiat
+              tortor ac elit pulvinar varius. Etiam luctus laoreet leo, eu
+              lacinia urna. Vivamus eleifend urna ut lorem ultrices auctor.
+              Fusce accumsan, quam eu euismod hendrerit, nibh sapien faucibus
+              elit, id malesuada felis metus nec massa. In tempor ante sapien,
+              at fermentum mi congue nec. Nulla facilisi. Suspendisse vestibulum
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              ultrices felis et justo blandit, a faucibus tellus aliquam. Nunc
+              tristique nisi eget justo dapibus consectetur. Nullam efficitur
+              nec augue nec viverra. Nullam nec dolor quis elit malesuada
+              blandit eget nec mauris. Etiam sit amet ex et odio tincidunt
+              faucibus. Donec efficitur, ligula at elementum mollis, quam est
+              auctor quam, at interdum justo nisi sit amet justo. Sed feugiat
+              tortor ac elit pulvinar varius. Etiam luctus laoreet leo, eu
+              lacinia urna. Vivamus eleifend urna ut lorem ultrices auctor. at
+              fermentum mi congue nec. Nulla facilisi. Suspendisse vestibulum,
+              libero nec fringilla dignissim, libero quam euismod metus, sit
+              amet consectetur orci lorem a neque.
+            </p>
+          </div>
+          <div class="hr-container-1">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-quote">
+            <h2>
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut odio
+              vero repudiandae blanditiis vitae tenetur placeat autem commodi
+              obcaecati illum?"
+            </h2>
+          </div>
+          <div class="hr-container">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-quote">
+            <h5>Heading</h5>
+            <h2>
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut odio
+              vero repudiandae blanditiis vitae tenetur placeat autem commodi
+              obcaecati illum?"
+            </h2>
+          </div>
+          <div class="hr-container-1">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-quote">
+            <h5>Heading</h5>
+            <h2>
+              "Lorem, ipsum dolor sit amet
+              <button class="btn"><i class="fa-solid fa-plus"></i></button>
+            </h2>
+            <h2>
+              "Lorem, ipsum dolor sit amet
+              <button class="btn"><i class="fa-solid fa-plus"></i></button>
+            </h2>
+            <h2>
+              "Lorem, ipsum dolor sit amet
+              <button class="btn"><i class="fa-solid fa-plus"></i></button>
+            </h2>
+          </div>
+          <div class="hr-container">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-blog-links">
+            <h2>Related Blog Or News</h2>
+          </div>
+          <div class="hr-container-1">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-news-card-links">
+            <div class="doctor-news-cards">
+              <div class="card-1">
+                <h5>10 March, 2023</h5>
+                <h4>
+                  MaxCyte signs strategic platform license with Catamaran Bio to
+                  support its CAR-NK cell therapy programs
+                </h4>
+              </div>
+              <div class="card-2">
+                <h5>10 March, 2023</h5>
+                <h4>
+                  MaxCyte signs strategic platform license with Catamaran Bio to
+                  support its CAR-NK cell therapy programs
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="image-section" class="image-container">
+          <img class="doctor-avtar" src="./img/Dr.png" alt="Example Image" />
+        </div>
+      </div>
+    </main>
+
+    <!-- main section for Tablet verssion -->
+
+    <main class="about-doctor-tabletVersion">
+      <div id="main-container">
+        <div id="image-section" class="image-container">
+          <img class="doctor-avtar" src="./img/Dr.png" alt="Example Image" />
+        </div>
+        <div id="text-section">
+          <div class="doctor-name"><h2>Dr.Nikhil Raghav</h2></div>
+          <div class="doctor-speciality">
+            <h4>Child Health, MBBS, Paediatrics</h4>
+          </div>
+          <div class="doctor-about-para">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              ultrices felis et justo blandit, a faucibus tellus aliquam. Nunc
+              tristique nisi eget justo dapibus consectetur. Nullam efficitur
+              nec augue nec viverra. Nullam nec dolor quis elit malesuada
+              blandit eget nec mauris. Etiam sit amet ex et odio tincidunt
+              faucibus. Donec efficitur, ligula at elementum mollis, quam est
+              auctor quam, at interdum justo nisi sit amet justo. Sed feugiat
+              tortor ac elit pulvinar varius. Etiam luctus laoreet leo, eu
+              lacinia urna. Vivamus eleifend urna ut lorem ultrices auctor.
+              Fusce accumsan, quam eu euismod hendrerit, nibh sapien faucibus
+              elit, id malesuada felis metus nec massa. In tempor ante sapien,
+              at fermentum mi congue nec. Nulla facilisi. Suspendisse vestibulum
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              ultrices felis et justo blandit, a faucibus tellus aliquam. Nunc
+              tristique nisi eget justo dapibus consectetur. Nullam efficitur
+              nec augue nec viverra. Nullam nec dolor quis elit malesuada
+              blandit eget nec mauris. Etiam sit amet ex et odio tincidunt
+              faucibus. Donec efficitur, ligula at elementum mollis, quam est
+              auctor quam, at interdum justo nisi sit amet justo. Sed feugiat
+              tortor ac elit pulvinar varius. Etiam luctus laoreet leo, eu
+              lacinia urna. Vivamus eleifend urna ut lorem ultrices auctor. at
+              fermentum mi congue nec. Nulla facilisi. Suspendisse vestibulum,
+              libero nec fringilla dignissim, libero quam euismod metus, sit
+              amet consectetur orci lorem a neque.
+            </p>
+          </div>
+          <div class="hr-container-1">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-quote">
+            <h2>
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut odio
+              vero repudiandae blanditiis vitae tenetur placeat autem commodi
+              obcaecati illum?"
+            </h2>
+          </div>
+          <div class="hr-container">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-quote">
+            <h5>Heading</h5>
+            <h2>
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut odio
+              vero repudiandae blanditiis vitae tenetur placeat autem commodi
+              obcaecati illum?"
+            </h2>
+          </div>
+          <div class="hr-container-1">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-quote">
+            <h5>Heading</h5>
+            <h2>
+              "Lorem, ipsum dolor sit amet
+              <button class="btn"><i class="fa-solid fa-plus"></i></button>
+            </h2>
+            <h2>
+              "Lorem, ipsum dolor sit amet
+              <button class="btn"><i class="fa-solid fa-plus"></i></button>
+            </h2>
+            <h2>
+              "Lorem, ipsum dolor sit amet
+              <button class="btn"><i class="fa-solid fa-plus"></i></button>
+            </h2>
+          </div>
+          <div class="hr-container">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-blog-links">
+            <h2>Related Blog Or News</h2>
+          </div>
+          <div class="hr-container-1">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-news-card-links">
+            <div class="doctor-news-cards">
+              <div class="card-1">
+                <h5>10 March, 2023</h5>
+                <h4>
+                  MaxCyte signs strategic platform license with Catamaran Bio to
+                  support its CAR-NK cell therapy programs
+                </h4>
+              </div>
+              <div class="card-2">
+                <h5>10 March, 2023</h5>
+                <h4>
+                  MaxCyte signs strategic platform license with Catamaran Bio to
+                  support its CAR-NK cell therapy programs
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- main sectio about doctor information mobile version -->
+    <main class="about-doctor-mobile">
+      <div id="main-container">
+        <div id="image-section" class="image-container">
+          <img class="doctor-avtar" src="./img/Dr.png" alt="Example Image" />
+        </div>
+        <div id="text-section">
+          <div class="doctor-name"><h2>Dr.Nikhil Raghav</h2></div>
+          <div class="doctor-speciality">
+            <h4>Child Health, MBBS, Paediatrics</h4>
+          </div>
+          <div class="doctor-about-para">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              ultrices felis et justo blandit, a faucibus tellus aliquam. Nunc
+              tristique nisi eget justo dapibus consectetur. Nullam efficitur
+              nec augue nec viverra. Nullam nec dolor quis elit malesuada
+              blandit eget nec mauris. Etiam sit amet ex et odio tincidunt
+              faucibus. Donec efficitur, ligula at elementum mollis, quam est
+              auctor quam, at interdum justo nisi sit amet justo. Sed feugiat
+              tortor ac elit pulvinar varius. Etiam luctus laoreet leo, eu
+              lacinia urna. Vivamus eleifend urna ut lorem ultrices auctor.
+              Fusce accumsan, quam eu euismod hendrerit, nibh sapien faucibus
+              elit, id malesuada felis metus nec massa. In tempor ante sapien,
+              at fermentum mi congue nec. Nulla facilisi. Suspendisse vestibulum
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              ultrices felis et justo blandit, a faucibus tellus aliquam. Nunc
+              tristique nisi eget justo dapibus consectetur. Nullam efficitur
+              nec augue nec viverra. Nullam nec dolor quis elit malesuada
+              blandit eget nec mauris. Etiam sit amet ex et odio tincidunt
+              faucibus. Donec efficitur, ligula at elementum mollis, quam est
+              auctor quam, at interdum justo nisi sit amet justo. Sed feugiat
+              tortor ac elit pulvinar varius. Etiam luctus laoreet leo, eu
+              lacinia urna. Vivamus eleifend urna ut lorem ultrices auctor. at
+              fermentum mi congue nec. Nulla facilisi. Suspendisse vestibulum,
+              libero nec fringilla dignissim, libero quam euismod metus, sit
+              amet consectetur orci lorem a neque.
+            </p>
+          </div>
+          <div class="hr-container-1">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-quote">
+            <h2>
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut odio
+              vero repudiandae blanditiis vitae tenetur placeat autem commodi
+              obcaecati illum?"
+            </h2>
+          </div>
+          <div class="hr-container">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-quote">
+            <h5>Heading</h5>
+            <h2>
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut odio
+              vero repudiandae blanditiis vitae tenetur placeat autem commodi
+              obcaecati illum?"
+            </h2>
+          </div>
+          <div class="hr-container-1">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-quote">
+            <h5>Heading</h5>
+            <h2>
+              "Lorem, ipsum dolor sit amet
+              <button class="btn"><i class="fa-solid fa-plus"></i></button>
+            </h2>
+            <h2>
+              "Lorem, ipsum dolor sit amet
+              <button class="btn"><i class="fa-solid fa-plus"></i></button>
+            </h2>
+            <h2>
+              "Lorem, ipsum dolor sit amet
+              <button class="btn"><i class="fa-solid fa-plus"></i></button>
+            </h2>
+          </div>
+          <div class="hr-container">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-blog-links">
+            <h2>Related Blog Or News</h2>
+          </div>
+          <div class="hr-container-1">
+            <hr class="gradient-hr" />
+          </div>
+          <div class="doctor-news-card-links">
+            <div class="doctor-news-cards">
+              <div class="card-1">
+                <h5>10 March, 2023</h5>
+                <h4>
+                  MaxCyte signs strategic platform license with Catamaran Bio to
+                  support its CAR-NK cell therapy programs
+                </h4>
+              </div>
+              <div class="card-2">
+                <h5>10 March, 2023</h5>
+                <h4>
+                  MaxCyte signs strategic platform license with Catamaran Bio to
+                  support its CAR-NK cell therapy programs
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer section -->
+
+    <footer class="footer" id="swup">
+      <div class="footer-header">
+        <h1>
+          We bring you <br />
+          Closer to Care
+        </h1>
+      </div>
+      <div class="footer-btn">
+        <button class="btn">Book Appointment</button>
+      </div>
+      <div class="footer-menu">
+        <ul>
+          <li class="footer-list">
+            <a href="index.html" class="footer-link">Home</a>
+          </li>
+          <li class="footer-list">
+            <a href="" class="footer-link">About Us</a>
+          </li>
+          <li class="footer-list">
+            <a href="" class="footer-link">Doctors at Aartas</a>
+          </li>
+          <li class="footer-list">
+            <a href="" class="footer-link">Aartas App</a>
+          </li>
+          <li class="footer-list">
+            <a href="" class="footer-link">Physical Space</a>
+          </li>
+          <li class="footer-list">
+            <a href="#header" class="footer-link">Locations</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-icons">
+        <div class="footer-icons-left">
+          <a
+            href="https://www.facebook.com/aartasofficial?paipv=0&eav=AfZFE4NslHsSBzRTmbjuY4lBpA4sobrxqGd14ObSL1W3BulsO6TuEqEjDqEGn6oY5PY&_rdr"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/aartasofficial/"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://twitter.com/AartasOfficial"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/aartas-clinishare/mycompany/"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </div>
+        <div class="footer-icons-right">
+          <a href="tel: +91 98103 66516"><i class="fa-solid fa-phone"></i></a>
+          <a href="#header"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2023 Aartas Care Pvt. Ltd. - All rights reserved
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script>
+      // js code for navigation hamberger menu
+
+      const hamberger = document.querySelector(".hamberger");
+      const menu = document.querySelector(".menu");
+
+      hamberger.addEventListener("click", () => {
+        hamberger.classList.toggle("active");
+        menu.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
