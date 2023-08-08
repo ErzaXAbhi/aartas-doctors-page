@@ -88,7 +88,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-left: -0.55rem;
+    margin-left: -1.55rem;
   }
 
   .break-on-mobile {
@@ -106,7 +106,7 @@
 
   .slide {
     margin-top: 30rem;
-    margin-left: -20rem;
+    margin-left: -17rem;
     display: flex;
     justify-content: center;
     align-items: center;
