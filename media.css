@@ -67,6 +67,12 @@
     left: 0rem;
   }
 
+  /* Heading */
+
+  .heading a {
+    margin: 0.5rem;
+  }
+
   /* Hero section */
 
   .hero {
