@@ -215,11 +215,8 @@
     overflow-x: hidden;
   } */
 
-  .scroll-doctor-info {
-    display: none;
-  }
   .scroll-doctor-info-mobile {
-    display: block;
+    display: none;
   }
 
   .cards {
