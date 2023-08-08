@@ -1,4 +1,3 @@
-
 /* for mobile version */
 @media screen and (max-width: 768px) {
   /* navigation bar */
@@ -65,7 +64,7 @@
   }
 
   .menu.active {
-    left: -83px;
+    left: 0rem;
   }
 
   /* Hero section */
@@ -106,7 +105,7 @@
   } */
 
   .slide {
-    margin-top: 32rem;
+    margin-top: 26rem;
     margin-left: -21rem;
     display: flex;
     justify-content: center;
@@ -363,7 +362,7 @@
   #image-section {
     position: absolute;
     flex: 1;
-   margin: 0.75rem;
+    margin: 0.75rem;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -397,7 +396,7 @@
 
   .doctor-about-para {
     flex-direction: column;
-   gap: 1rem;
+    gap: 1rem;
   }
 
   .doctor-quote {
@@ -639,9 +638,9 @@
     margin-right: 1rem;
   }
 
-   /* about doctor page */
+  /* about doctor page */
 
-   .about-doctor {
+  .about-doctor {
     display: none;
   }
 
@@ -662,7 +661,7 @@
 
   #image-section {
     position: absolute;
-   margin: 1.75rem;
+    margin: 1.75rem;
     overflow: hidden;
     margin-right: 15rem;
     height: 50vh;
@@ -687,7 +686,7 @@
   }
 
   .doctor-name {
-margin-left: 7.5rem;
+    margin-left: 7.5rem;
   }
 
   .doctor-speciality {
@@ -709,7 +708,7 @@ margin-left: 7.5rem;
 
   .doctor-about-para {
     flex-direction: column;
-   gap: 1rem;
+    gap: 1rem;
   }
 
   .doctor-quote {
@@ -728,6 +727,4 @@ margin-left: 7.5rem;
   .doctor-news-cards {
     flex-direction: column;
   }
-
-
 }
