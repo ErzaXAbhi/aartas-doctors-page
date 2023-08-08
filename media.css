@@ -73,6 +73,10 @@
     margin: 0.5rem;
   }
 
+  .heading h3 {
+    font-size: 1rem;
+  }
+
   /* Hero section */
 
   .hero {
