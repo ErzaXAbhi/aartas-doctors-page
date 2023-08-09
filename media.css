@@ -172,7 +172,7 @@
   .about_doctor {
     flex-direction: column;
     position: relative;
-    height: 15vh;
+    height: 100vh;
     margin-top: 0;
   }
 
@@ -185,7 +185,7 @@
   }
 
   .scroll-doctor-info-mobile {
-    display: block;
+    display: none;
   }
 
   .scroll-menu {
