@@ -176,8 +176,16 @@
     margin-top: 0;
   }
 
+  .scroll-doctor-info {
+    display: none;
+  }
+
   .about_doctor_tabVersion {
     display: none;
+  }
+
+  .scroll-doctor-info-mobile {
+    display: block;
   }
 
   .scroll-menu {
@@ -226,10 +234,6 @@
     margin-top: 0.5rem;
     overflow-x: hidden;
   } */
-
-  .scroll-doctor-info-mobile {
-    display: none;
-  }
 
   .cards {
     display: flex;
