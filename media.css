@@ -76,6 +76,10 @@
 
   /* Hero section */
 
+  .heading-main {
+    padding: 0 2rem;
+  }
+
   .hero {
     display: flex;
     top: -15%;
