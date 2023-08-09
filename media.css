@@ -69,8 +69,9 @@
 
   /* Heading */
 
-  .heading a {
-    margin: 0.2rem;
+  .heading a i {
+    padding: 0.625rem;
+    display: inline-block;
     cursor: pointer;
   }
 
